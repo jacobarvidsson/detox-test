@@ -1,0 +1,947 @@
+Jun 4 16:39:15 detox[40488] TRACE: [DETOX_CREATE] created a Detox instance with config:
+{
+  appsConfig: {
+    default: {
+      type: 'ios.app',
+      binaryPath: 'ios/build/Build/Products/Debug-iphonesimulator/DetoxOutputTest.app',
+      build: 'xcodebuild -workspace ios/DetoxOutputTest.xcworkspace -scheme DetoxOutputTest -sdk iphonesimulator -derivedDataPath ios/build'
+    }
+  },
+  artifactsConfig: {
+    rootDir: 'artifacts/ios.2022-06-04 15-39-14Z',
+    plugins: {
+      log: {
+        enabled: true,
+        keepOnlyFailedTestsArtifacts: false
+      },
+      screenshot: {
+        enabled: true,
+        shouldTakeAutomaticSnapshots: true,
+        keepOnlyFailedTestsArtifacts: true,
+        takeWhen: {
+          testStart: false,
+          testDone: true
+        }
+      },
+      video: {
+        android: {
+          bitRate: 4000000
+        },
+        simulator: {
+          codec: 'hevc'
+        },
+        enabled: false,
+        keepOnlyFailedTestsArtifacts: false
+      },
+      instruments: {
+        enabled: false,
+        keepOnlyFailedTestsArtifacts: false
+      },
+      timeline: {
+        enabled: false
+      },
+      uiHierarchy: {
+        enabled: true,
+        keepOnlyFailedTestsArtifacts: false
+      }
+    },
+    pathBuilder: ArtifactPathBuilder {
+      _rootDir: 'artifacts/ios.2022-06-04 15-39-14Z'
+    }
+  },
+  behaviorConfig: {
+    init: {
+      reinstallApp: true,
+      exposeGlobals: false
+    },
+    cleanup: {
+      shutdownDevice: false
+    },
+    launchApp: 'auto'
+  },
+  cliConfig: {
+    configuration: 'ios',
+    useCustomLogger: true
+  },
+  configurationName: 'ios',
+  deviceConfig: {
+    type: 'ios.simulator',
+    device: {
+      type: 'iPhone 13'
+    }
+  },
+  runnerConfig: {
+    testRunner: 'jest',
+    runnerConfig: 'e2e/config.json',
+    specs: 'e2e',
+    skipLegacyWorkersInjection: true
+  },
+  sessionConfig: {
+    autoStart: true,
+    sessionId: '9c8db324-4c53-1aa7-1b95-b99eb07f0fbf',
+    debugSynchronization: 10000
+  }
+}
+Jun 4 16:39:15 detox[40488] DEBUG: [WSS_CREATE] Detox server listening on localhost:51482...
+Jun 4 16:39:15 detox[40488] DEBUG: [WSS_CONNECTION, #51483] registered a new connection.
+Jun 4 16:39:15 detox[40488] TRACE: [WS_OPEN] opened web socket to: ws://localhost:51482
+Jun 4 16:39:15 detox[40488] TRACE: [WS_SEND] {"type":"login","params":{"sessionId":"9c8db324-4c53-1aa7-1b95-b99eb07f0fbf","role":"tester"},"messageId":0}
+Jun 4 16:39:15 detox[40488] TRACE: [WSS_GET_FROM, #51483] {"type":"login","params":{"sessionId":"9c8db324-4c53-1aa7-1b95-b99eb07f0fbf","role":"tester"},"messageId":0}
+Jun 4 16:39:15 detox[40488] TRACE: [SESSION_CREATED] created session 9c8db324-4c53-1aa7-1b95-b99eb07f0fbf
+Jun 4 16:39:15 detox[40488] TRACE: [WSS_SEND_TO, #tester] {"type":"loginSuccess","params":{"testerConnected":true,"appConnected":false},"messageId":0}
+Jun 4 16:39:15 detox[40488] TRACE: [SESSION_JOINED] tester joined session 9c8db324-4c53-1aa7-1b95-b99eb07f0fbf
+Jun 4 16:39:15 detox[40488] TRACE: [WS_MESSAGE] {"type":"loginSuccess","params":{"testerConnected":true,"appConnected":false},"messageId":0}
+ 
+Jun 4 16:39:16 detox[40488] DEBUG: [EXEC_CMD, #0] applesimutils --list --byType "iPhone 13"
+Jun 4 16:39:16 detox[40488] TRACE: [EXEC_SUCCESS, #0] [
+  {
+    "os" : {
+      "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS.simruntime",
+      "buildversion" : "19F70",
+      "platform" : "iOS",
+      "runtimeRoot" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS.simruntime\/Contents\/Resources\/RuntimeRoot",
+      "identifier" : "com.apple.CoreSimulator.SimRuntime.iOS-15-5",
+      "version" : "15.5",
+      "isInternal" : false,
+      "isAvailable" : true,
+      "name" : "iOS 15.5",
+      "supportedDeviceTypes" : [
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 6s.simdevicetype",
+          "name" : "iPhone 6s",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-6s",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 6s Plus.simdevicetype",
+          "name" : "iPhone 6s Plus",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone SE (1st generation).simdevicetype",
+          "name" : "iPhone SE (1st generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-SE",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 7.simdevicetype",
+          "name" : "iPhone 7",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-7",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 7 Plus.simdevicetype",
+          "name" : "iPhone 7 Plus",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-7-Plus",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 8.simdevicetype",
+          "name" : "iPhone 8",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-8",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 8 Plus.simdevicetype",
+          "name" : "iPhone 8 Plus",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-8-Plus",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone X.simdevicetype",
+          "name" : "iPhone X",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-X",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone Xs.simdevicetype",
+          "name" : "iPhone Xs",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-XS",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone Xs Max.simdevicetype",
+          "name" : "iPhone Xs Max",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-XS-Max",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone Xʀ.simdevicetype",
+          "name" : "iPhone Xʀ",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-XR",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 11.simdevicetype",
+          "name" : "iPhone 11",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-11",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 11 Pro.simdevicetype",
+          "name" : "iPhone 11 Pro",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-11-Pro",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 11 Pro Max.simdevicetype",
+          "name" : "iPhone 11 Pro Max",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-11-Pro-Max",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone SE (2nd generation).simdevicetype",
+          "name" : "iPhone SE (2nd generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-SE--2nd-generation-",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 12 mini.simdevicetype",
+          "name" : "iPhone 12 mini",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-12-mini",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 12.simdevicetype",
+          "name" : "iPhone 12",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-12",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 12 Pro.simdevicetype",
+          "name" : "iPhone 12 Pro",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-12-Pro",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 12 Pro Max.simdevicetype",
+          "name" : "iPhone 12 Pro Max",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-12-Pro-Max",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 13 Pro.simdevicetype",
+          "name" : "iPhone 13 Pro",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-13-Pro",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 13 Pro Max.simdevicetype",
+          "name" : "iPhone 13 Pro Max",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-13-Pro-Max",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 13 mini.simdevicetype",
+          "name" : "iPhone 13 mini",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-13-mini",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 13.simdevicetype",
+          "name" : "iPhone 13",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-13",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone SE (3rd generation).simdevicetype",
+          "name" : "iPhone SE (3rd generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPod touch (7th generation).simdevicetype",
+          "name" : "iPod touch (7th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPod-touch--7th-generation-",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad mini 4.simdevicetype",
+          "name" : "iPad mini 4",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-4",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Air 2.simdevicetype",
+          "name" : "iPad Air 2",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-2",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (9.7-inch).simdevicetype",
+          "name" : "iPad Pro (9.7-inch)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--9-7-inch-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (12.9-inch) (1st generation).simdevicetype",
+          "name" : "iPad Pro (12.9-inch) (1st generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad (5th generation).simdevicetype",
+          "name" : "iPad (5th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad--5th-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (12.9-inch) (2nd generation).simdevicetype",
+          "name" : "iPad Pro (12.9-inch) (2nd generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--12-9-inch---2nd-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (10.5-inch).simdevicetype",
+          "name" : "iPad Pro (10.5-inch)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--10-5-inch-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad (6th generation).simdevicetype",
+          "name" : "iPad (6th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad--6th-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad (7th generation).simdevicetype",
+          "name" : "iPad (7th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad--7th-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (11-inch) (1st generation).simdevicetype",
+          "name" : "iPad Pro (11-inch) (1st generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--11-inch-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (12.9-inch) (3rd generation).simdevicetype",
+          "name" : "iPad Pro (12.9-inch) (3rd generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--12-9-inch---3rd-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (11-inch) (2nd generation).simdevicetype",
+          "name" : "iPad Pro (11-inch) (2nd generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--11-inch---2nd-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (12.9-inch) (4th generation).simdevicetype",
+          "name" : "iPad Pro (12.9-inch) (4th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--12-9-inch---4th-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad mini (5th generation).simdevicetype",
+          "name" : "iPad mini (5th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini--5th-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Air (3rd generation).simdevicetype",
+          "name" : "iPad Air (3rd generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air--3rd-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad (8th generation).simdevicetype",
+          "name" : "iPad (8th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad--8th-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad (9th generation).simdevicetype",
+          "name" : "iPad (9th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-9th-generation",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Air (4th generation).simdevicetype",
+          "name" : "iPad Air (4th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air--4th-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (11-inch) (3rd generation).simdevicetype",
+          "name" : "iPad Pro (11-inch) (3rd generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-3rd-generation",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (12.9-inch) (5th generation).simdevicetype",
+          "name" : "iPad Pro (12.9-inch) (5th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-12-9-inch-5th-generation",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Air (5th generation).simdevicetype",
+          "name" : "iPad Air (5th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-5th-generation",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad mini (6th generation).simdevicetype",
+          "name" : "iPad mini (6th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-6th-generation",
+          "productFamily" : "iPad"
+        }
+      ]
+    },
+    "dataPath" : "\/Users\/jacobarvidsson\/Library\/Developer\/CoreSimulator\/Devices\/450F4FD7-0F9F-43C3-A96A-B38DD4650685\/data",
+    "dataPathSize" : 3046227968,
+    "logPath" : "\/Users\/jacobarvidsson\/Library\/Logs\/CoreSimulator\/450F4FD7-0F9F-43C3-A96A-B38DD4650685",
+    "udid" : "450F4FD7-0F9F-43C3-A96A-B38DD4650685",
+    "isAvailable" : true,
+    "deviceType" : {
+      "maxRuntimeVersion" : 4294967295,
+      "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 13.simdevicetype",
+      "maxRuntimeVersionString" : "65535.255.255",
+      "name" : "iPhone 13",
+      "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-13",
+      "productFamily" : "iPhone",
+      "modelIdentifier" : "iPhone14,5",
+      "minRuntimeVersionString" : "15.0.0",
+      "minRuntimeVersion" : 983040
+    },
+    "logPathSize" : 552960,
+    "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-13",
+    "state" : "Booted",
+    "name" : "iPhone 13"
+  }
+]
+
+Jun 4 16:39:16 detox[40488] DEBUG: [EXEC_CMD, #1] applesimutils --list --byId 450F4FD7-0F9F-43C3-A96A-B38DD4650685 --maxResults 1
+Jun 4 16:39:16 detox[40488] TRACE: [EXEC_SUCCESS, #1] [
+  {
+    "os" : {
+      "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS.simruntime",
+      "buildversion" : "19F70",
+      "platform" : "iOS",
+      "runtimeRoot" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/Runtimes\/iOS.simruntime\/Contents\/Resources\/RuntimeRoot",
+      "identifier" : "com.apple.CoreSimulator.SimRuntime.iOS-15-5",
+      "version" : "15.5",
+      "isInternal" : false,
+      "isAvailable" : true,
+      "name" : "iOS 15.5",
+      "supportedDeviceTypes" : [
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 6s.simdevicetype",
+          "name" : "iPhone 6s",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-6s",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 6s Plus.simdevicetype",
+          "name" : "iPhone 6s Plus",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-6s-Plus",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone SE (1st generation).simdevicetype",
+          "name" : "iPhone SE (1st generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-SE",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 7.simdevicetype",
+          "name" : "iPhone 7",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-7",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 7 Plus.simdevicetype",
+          "name" : "iPhone 7 Plus",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-7-Plus",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 8.simdevicetype",
+          "name" : "iPhone 8",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-8",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 8 Plus.simdevicetype",
+          "name" : "iPhone 8 Plus",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-8-Plus",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone X.simdevicetype",
+          "name" : "iPhone X",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-X",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone Xs.simdevicetype",
+          "name" : "iPhone Xs",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-XS",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone Xs Max.simdevicetype",
+          "name" : "iPhone Xs Max",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-XS-Max",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone Xʀ.simdevicetype",
+          "name" : "iPhone Xʀ",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-XR",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 11.simdevicetype",
+          "name" : "iPhone 11",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-11",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 11 Pro.simdevicetype",
+          "name" : "iPhone 11 Pro",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-11-Pro",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 11 Pro Max.simdevicetype",
+          "name" : "iPhone 11 Pro Max",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-11-Pro-Max",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone SE (2nd generation).simdevicetype",
+          "name" : "iPhone SE (2nd generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-SE--2nd-generation-",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 12 mini.simdevicetype",
+          "name" : "iPhone 12 mini",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-12-mini",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 12.simdevicetype",
+          "name" : "iPhone 12",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-12",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 12 Pro.simdevicetype",
+          "name" : "iPhone 12 Pro",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-12-Pro",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 12 Pro Max.simdevicetype",
+          "name" : "iPhone 12 Pro Max",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-12-Pro-Max",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 13 Pro.simdevicetype",
+          "name" : "iPhone 13 Pro",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-13-Pro",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 13 Pro Max.simdevicetype",
+          "name" : "iPhone 13 Pro Max",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-13-Pro-Max",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 13 mini.simdevicetype",
+          "name" : "iPhone 13 mini",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-13-mini",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 13.simdevicetype",
+          "name" : "iPhone 13",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-13",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone SE (3rd generation).simdevicetype",
+          "name" : "iPhone SE (3rd generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-SE-3rd-generation",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPod touch (7th generation).simdevicetype",
+          "name" : "iPod touch (7th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPod-touch--7th-generation-",
+          "productFamily" : "iPhone"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad mini 4.simdevicetype",
+          "name" : "iPad mini 4",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-4",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Air 2.simdevicetype",
+          "name" : "iPad Air 2",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-2",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (9.7-inch).simdevicetype",
+          "name" : "iPad Pro (9.7-inch)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--9-7-inch-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (12.9-inch) (1st generation).simdevicetype",
+          "name" : "iPad Pro (12.9-inch) (1st generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad (5th generation).simdevicetype",
+          "name" : "iPad (5th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad--5th-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (12.9-inch) (2nd generation).simdevicetype",
+          "name" : "iPad Pro (12.9-inch) (2nd generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--12-9-inch---2nd-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (10.5-inch).simdevicetype",
+          "name" : "iPad Pro (10.5-inch)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--10-5-inch-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad (6th generation).simdevicetype",
+          "name" : "iPad (6th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad--6th-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad (7th generation).simdevicetype",
+          "name" : "iPad (7th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad--7th-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (11-inch) (1st generation).simdevicetype",
+          "name" : "iPad Pro (11-inch) (1st generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--11-inch-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (12.9-inch) (3rd generation).simdevicetype",
+          "name" : "iPad Pro (12.9-inch) (3rd generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--12-9-inch---3rd-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (11-inch) (2nd generation).simdevicetype",
+          "name" : "iPad Pro (11-inch) (2nd generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--11-inch---2nd-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (12.9-inch) (4th generation).simdevicetype",
+          "name" : "iPad Pro (12.9-inch) (4th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro--12-9-inch---4th-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad mini (5th generation).simdevicetype",
+          "name" : "iPad mini (5th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini--5th-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Air (3rd generation).simdevicetype",
+          "name" : "iPad Air (3rd generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air--3rd-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad (8th generation).simdevicetype",
+          "name" : "iPad (8th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad--8th-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad (9th generation).simdevicetype",
+          "name" : "iPad (9th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-9th-generation",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Air (4th generation).simdevicetype",
+          "name" : "iPad Air (4th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air--4th-generation-",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (11-inch) (3rd generation).simdevicetype",
+          "name" : "iPad Pro (11-inch) (3rd generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-11-inch-3rd-generation",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Pro (12.9-inch) (5th generation).simdevicetype",
+          "name" : "iPad Pro (12.9-inch) (5th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Pro-12-9-inch-5th-generation",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad Air (5th generation).simdevicetype",
+          "name" : "iPad Air (5th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-Air-5th-generation",
+          "productFamily" : "iPad"
+        },
+        {
+          "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPad mini (6th generation).simdevicetype",
+          "name" : "iPad mini (6th generation)",
+          "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPad-mini-6th-generation",
+          "productFamily" : "iPad"
+        }
+      ]
+    },
+    "dataPath" : "\/Users\/jacobarvidsson\/Library\/Developer\/CoreSimulator\/Devices\/450F4FD7-0F9F-43C3-A96A-B38DD4650685\/data",
+    "dataPathSize" : 3046227968,
+    "logPath" : "\/Users\/jacobarvidsson\/Library\/Logs\/CoreSimulator\/450F4FD7-0F9F-43C3-A96A-B38DD4650685",
+    "udid" : "450F4FD7-0F9F-43C3-A96A-B38DD4650685",
+    "isAvailable" : true,
+    "deviceType" : {
+      "maxRuntimeVersion" : 4294967295,
+      "bundlePath" : "\/Applications\/Xcode.app\/Contents\/Developer\/Platforms\/iPhoneOS.platform\/Library\/Developer\/CoreSimulator\/Profiles\/DeviceTypes\/iPhone 13.simdevicetype",
+      "maxRuntimeVersionString" : "65535.255.255",
+      "name" : "iPhone 13",
+      "identifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-13",
+      "productFamily" : "iPhone",
+      "modelIdentifier" : "iPhone14,5",
+      "minRuntimeVersionString" : "15.0.0",
+      "minRuntimeVersion" : 983040
+    },
+    "logPathSize" : 552960,
+    "deviceTypeIdentifier" : "com.apple.CoreSimulator.SimDeviceType.iPhone-13",
+    "state" : "Booted",
+    "name" : "iPhone 13"
+  }
+]
+
+Jun 4 16:39:16 detox[40488] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBootDevice({
+  deviceId: '450F4FD7-0F9F-43C3-A96A-B38DD4650685',
+  type: 'ios.simulator',
+  coldBoot: false
+})
+Jun 4 16:39:16 detox[40488] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeTerminateApp({
+  deviceId: '450F4FD7-0F9F-43C3-A96A-B38DD4650685',
+  bundleId: 'org.reactjs.native.example.DetoxOutputTest'
+})
+Jun 4 16:39:16 detox[40488] DEBUG: [EXEC_CMD, #2] /usr/bin/xcrun simctl terminate 450F4FD7-0F9F-43C3-A96A-B38DD4650685 org.reactjs.native.example.DetoxOutputTest
+Jun 4 16:39:16 detox[40488] DEBUG: [EXEC_TRY, #2] Terminating org.reactjs.native.example.DetoxOutputTest...
+Jun 4 16:39:16 detox[40488] DEBUG: [EXEC_SUCCESS, #2] org.reactjs.native.example.DetoxOutputTest terminated
+Jun 4 16:39:16 detox[40488] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onTerminateApp({
+  deviceId: '450F4FD7-0F9F-43C3-A96A-B38DD4650685',
+  bundleId: 'org.reactjs.native.example.DetoxOutputTest'
+})
+Jun 4 16:39:16 detox[40488] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeUninstallApp({
+  deviceId: '450F4FD7-0F9F-43C3-A96A-B38DD4650685',
+  bundleId: 'org.reactjs.native.example.DetoxOutputTest'
+})
+Jun 4 16:39:16 detox[40488] DEBUG: [EXEC_CMD, #3] /usr/bin/xcrun simctl uninstall 450F4FD7-0F9F-43C3-A96A-B38DD4650685 org.reactjs.native.example.DetoxOutputTest
+Jun 4 16:39:16 detox[40488] DEBUG: [EXEC_TRY, #3] Uninstalling org.reactjs.native.example.DetoxOutputTest...
+Jun 4 16:39:16 detox[40488] DEBUG: [EXEC_SUCCESS, #3] org.reactjs.native.example.DetoxOutputTest uninstalled
+Jun 4 16:39:16 detox[40488] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeTerminateApp({
+  deviceId: '450F4FD7-0F9F-43C3-A96A-B38DD4650685',
+  bundleId: 'org.reactjs.native.example.DetoxOutputTest'
+})
+Jun 4 16:39:16 detox[40488] DEBUG: [EXEC_CMD, #4] /usr/bin/xcrun simctl terminate 450F4FD7-0F9F-43C3-A96A-B38DD4650685 org.reactjs.native.example.DetoxOutputTest
+Jun 4 16:39:16 detox[40488] DEBUG: [EXEC_TRY, #4] Terminating org.reactjs.native.example.DetoxOutputTest...
+Jun 4 16:39:18 detox[40488] TRACE: [EXEC_TRY_FAIL, #4] An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Application termination failed.
+FBSSystemService reported failure without an error, possibly because the app is not currently running.
+
+Jun 4 16:39:18 detox[40488] DEBUG: [EXEC_TRY, #4] Terminating org.reactjs.native.example.DetoxOutputTest...
+Jun 4 16:39:18 detox[40488] DEBUG: [EXEC_FAIL, #4] "/usr/bin/xcrun simctl terminate 450F4FD7-0F9F-43C3-A96A-B38DD4650685 org.reactjs.native.example.DetoxOutputTest" failed with error = ChildProcessError: Command failed: /usr/bin/xcrun simctl terminate 450F4FD7-0F9F-43C3-A96A-B38DD4650685 org.reactjs.native.example.DetoxOutputTest
+An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Application termination failed.
+FBSSystemService reported failure without an error, possibly because the app is not currently running.
+ `/usr/bin/xcrun simctl terminate 450F4FD7-0F9F-43C3-A96A-B38DD4650685 org.reactjs.native.example.DetoxOutputTest` (exited with error code 3) (code=3), stdout and stderr:
+
+Jun 4 16:39:18 detox[40488] DEBUG: [EXEC_FAIL, #4] 
+Jun 4 16:39:18 detox[40488] DEBUG: [EXEC_FAIL, #4] An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Application termination failed.
+FBSSystemService reported failure without an error, possibly because the app is not currently running.
+
+Jun 4 16:39:18 detox[40488] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onTerminateApp({
+  deviceId: '450F4FD7-0F9F-43C3-A96A-B38DD4650685',
+  bundleId: 'org.reactjs.native.example.DetoxOutputTest'
+})
+Jun 4 16:39:18 detox[40488] DEBUG: [EXEC_CMD, #5] /usr/bin/xcrun simctl install 450F4FD7-0F9F-43C3-A96A-B38DD4650685 "/Users/jacobarvidsson/Developer/open-source/detox-output/DetoxOutputTest/ios/build/Build/Products/Debug-iphonesimulator/DetoxOutputTest.app"
+Jun 4 16:39:18 detox[40488] DEBUG: [EXEC_TRY, #5] Installing /Users/jacobarvidsson/Developer/open-source/detox-output/DetoxOutputTest/ios/build/Build/Products/Debug-iphonesimulator/DetoxOutputTest.app...
+Jun 4 16:39:19 detox[40488] DEBUG: [EXEC_SUCCESS, #5] /Users/jacobarvidsson/Developer/open-source/detox-output/DetoxOutputTest/ios/build/Build/Products/Debug-iphonesimulator/DetoxOutputTest.app installed
+Jun 4 16:39:19 detox[40488] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeTerminateApp({
+  deviceId: '450F4FD7-0F9F-43C3-A96A-B38DD4650685',
+  bundleId: 'org.reactjs.native.example.DetoxOutputTest'
+})
+Jun 4 16:39:19 detox[40488] DEBUG: [EXEC_CMD, #6] /usr/bin/xcrun simctl terminate 450F4FD7-0F9F-43C3-A96A-B38DD4650685 org.reactjs.native.example.DetoxOutputTest
+Jun 4 16:39:19 detox[40488] DEBUG: [EXEC_TRY, #6] Terminating org.reactjs.native.example.DetoxOutputTest...
+Jun 4 16:39:20 detox[40488] TRACE: [EXEC_TRY_FAIL, #6] An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Application termination failed.
+FBSSystemService reported failure without an error, possibly because the app is not currently running.
+
+Jun 4 16:39:20 detox[40488] DEBUG: [EXEC_TRY, #6] Terminating org.reactjs.native.example.DetoxOutputTest...
+Jun 4 16:39:20 detox[40488] DEBUG: [EXEC_FAIL, #6] "/usr/bin/xcrun simctl terminate 450F4FD7-0F9F-43C3-A96A-B38DD4650685 org.reactjs.native.example.DetoxOutputTest" failed with error = ChildProcessError: Command failed: /usr/bin/xcrun simctl terminate 450F4FD7-0F9F-43C3-A96A-B38DD4650685 org.reactjs.native.example.DetoxOutputTest
+An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Application termination failed.
+FBSSystemService reported failure without an error, possibly because the app is not currently running.
+ `/usr/bin/xcrun simctl terminate 450F4FD7-0F9F-43C3-A96A-B38DD4650685 org.reactjs.native.example.DetoxOutputTest` (exited with error code 3) (code=3), stdout and stderr:
+
+Jun 4 16:39:20 detox[40488] DEBUG: [EXEC_FAIL, #6] 
+Jun 4 16:39:20 detox[40488] DEBUG: [EXEC_FAIL, #6] An error was encountered processing the command (domain=NSPOSIXErrorDomain, code=3):
+Application termination failed.
+FBSSystemService reported failure without an error, possibly because the app is not currently running.
+
+Jun 4 16:39:20 detox[40488] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onTerminateApp({
+  deviceId: '450F4FD7-0F9F-43C3-A96A-B38DD4650685',
+  bundleId: 'org.reactjs.native.example.DetoxOutputTest'
+})
+Jun 4 16:39:20 detox[40488] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeLaunchApp({
+  bundleId: 'org.reactjs.native.example.DetoxOutputTest',
+  deviceId: '450F4FD7-0F9F-43C3-A96A-B38DD4650685',
+  launchArgs: {
+    detoxServer: 'ws://localhost:51482',
+    detoxSessionId: '9c8db324-4c53-1aa7-1b95-b99eb07f0fbf'
+  }
+})
+Jun 4 16:39:20 detox[40488] TRACE: [ARTIFACT_START] starting SimulatorLogRecording {
+  udid: '450F4FD7-0F9F-43C3-A96A-B38DD4650685',
+  bundleId: 'org.reactjs.native.example.DetoxOutputTest'
+}
+Jun 4 16:39:20 detox[40488] DEBUG: [EXEC_CMD, #7] /usr/bin/xcrun simctl get_app_container 450F4FD7-0F9F-43C3-A96A-B38DD4650685 org.reactjs.native.example.DetoxOutputTest
+Jun 4 16:39:20 detox[40488] TRACE: [EXEC_SUCCESS, #7] /Users/jacobarvidsson/Library/Developer/CoreSimulator/Devices/450F4FD7-0F9F-43C3-A96A-B38DD4650685/data/Containers/Bundle/Application/ED4B1BEA-D20F-4828-BFD6-5EE6DA82A932/DetoxOutputTest.app
+
+Jun 4 16:39:20 detox[40488] DEBUG: [SPAWN_CMD, #8, cpid=40558] /usr/bin/xcrun simctl spawn 450F4FD7-0F9F-43C3-A96A-B38DD4650685 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/jacobarvidsson/Library/Developer/CoreSimulator/Devices/450F4FD7-0F9F-43C3-A96A-B38DD4650685/data/Containers/Bundle/Application/ED4B1BEA-D20F-4828-BFD6-5EE6DA82A932/DetoxOutputTest.app\""
+Jun 4 16:39:20 detox[40488] DEBUG: [EXEC_CMD, #9] SIMCTL_CHILD_GULGeneratedClassDisposeDisabled=YES SIMCTL_CHILD_DYLD_INSERT_LIBRARIES="/Users/jacobarvidsson/Library/Detox/ios/5629bdbd1654ab272909076cfa30c6f09bf9158c/Detox.framework/Detox" /usr/bin/xcrun simctl launch 450F4FD7-0F9F-43C3-A96A-B38DD4650685 org.reactjs.native.example.DetoxOutputTest --args -detoxServer ws://localhost:51482 -detoxSessionId 9c8db324-4c53-1aa7-1b95-b99eb07f0fbf -detoxDebugVisibility YES
+Jun 4 16:39:20 detox[40488] DEBUG: [EXEC_TRY, #9] Launching org.reactjs.native.example.DetoxOutputTest...
+Jun 4 16:39:20 detox[40488] TRACE: [EXEC_SUCCESS, #9] org.reactjs.native.example.DetoxOutputTest: 40565
+
+Jun 4 16:39:20 detox[40488] DEBUG: [EXEC_CMD, #10] /usr/bin/xcrun simctl get_app_container 450F4FD7-0F9F-43C3-A96A-B38DD4650685 org.reactjs.native.example.DetoxOutputTest
+Jun 4 16:39:20 detox[40488] TRACE: [EXEC_SUCCESS, #10] /Users/jacobarvidsson/Library/Developer/CoreSimulator/Devices/450F4FD7-0F9F-43C3-A96A-B38DD4650685/data/Containers/Bundle/Application/ED4B1BEA-D20F-4828-BFD6-5EE6DA82A932/DetoxOutputTest.app
+
+Jun 4 16:39:20 detox[40488] INFO:  [AppleSimUtils.js] org.reactjs.native.example.DetoxOutputTest launched. To watch simulator logs, run:
+        /usr/bin/xcrun simctl spawn 450F4FD7-0F9F-43C3-A96A-B38DD4650685 log stream --level debug --style compact --predicate 'process == "DetoxOutputTest"'
+Jun 4 16:39:20 detox[40565] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onLaunchApp({
+  bundleId: 'org.reactjs.native.example.DetoxOutputTest',
+  deviceId: '450F4FD7-0F9F-43C3-A96A-B38DD4650685',
+  launchArgs: {
+    detoxServer: 'ws://localhost:51482',
+    detoxSessionId: '9c8db324-4c53-1aa7-1b95-b99eb07f0fbf',
+    detoxDebugVisibility: 'YES'
+  },
+  pid: 40565
+})
+Jun 4 16:39:21 detox[40488] DEBUG: [WSS_CONNECTION, #51489] registered a new connection.
+Jun 4 16:39:21 detox[40488] TRACE: [WSS_GET_FROM, #51489] {"messageId":0,"params":{"sessionId":"9c8db324-4c53-1aa7-1b95-b99eb07f0fbf","role":"app"},"type":"login"}
+Jun 4 16:39:21 detox[40488] TRACE: [WSS_SEND_TO, #app] {"messageId":0,"params":{"testerConnected":true,"appConnected":true},"type":"loginSuccess"}
+Jun 4 16:39:21 detox[40488] TRACE: [SESSION_JOINED] app joined session 9c8db324-4c53-1aa7-1b95-b99eb07f0fbf
+Jun 4 16:39:21 detox[40488] TRACE: [WSS_SEND_TO, #tester] {"type":"appConnected"}
+Jun 4 16:39:21 detox[40488] TRACE: [WS_MESSAGE] {"type":"appConnected"}
+ 
+Jun 4 16:39:21 detox[40488] TRACE: [WS_SEND] {"type":"isReady","params":{},"messageId":-1000}
+Jun 4 16:39:21 detox[40488] TRACE: [WSS_GET_FROM, #tester] {"type":"isReady","params":{},"messageId":-1000}
+Jun 4 16:39:21 detox[40488] TRACE: [WSS_SEND_TO, #app] {"type":"isReady","params":{},"messageId":-1000}
+Jun 4 16:39:22 detox[40488] TRACE: [WSS_GET_FROM, #app] {"params":{},"type":"ready","messageId":-1000}
+Jun 4 16:39:22 detox[40488] TRACE: [WSS_SEND_TO, #tester] {"params":{},"type":"ready","messageId":-1000}
+Jun 4 16:39:22 detox[40488] TRACE: [WS_MESSAGE] {"params":{},"type":"ready","messageId":-1000}
+ 
+Jun 4 16:39:22 detox[40488] TRACE: [WS_SEND] {"type":"waitForActive","params":{},"messageId":1}
+Jun 4 16:39:22 detox[40488] TRACE: [WSS_GET_FROM, #tester] {"type":"waitForActive","params":{},"messageId":1}
+Jun 4 16:39:22 detox[40488] TRACE: [WSS_SEND_TO, #app] {"type":"waitForActive","params":{},"messageId":1}
+Jun 4 16:39:22 detox[40488] TRACE: [WSS_GET_FROM, #app] {"params":{},"type":"ready","messageId":-1000}
+Jun 4 16:39:22 detox[40488] TRACE: [WSS_SEND_TO, #tester] {"params":{},"type":"ready","messageId":-1000}
+Jun 4 16:39:22 detox[40488] TRACE: [WS_MESSAGE] {"params":{},"type":"ready","messageId":-1000}
+ 
+Jun 4 16:39:22 detox[40488] TRACE: [WSS_GET_FROM, #app] {"params":{},"type":"ready","messageId":-1000}
+Jun 4 16:39:22 detox[40488] TRACE: [WSS_SEND_TO, #tester] {"params":{},"type":"ready","messageId":-1000}
+Jun 4 16:39:22 detox[40488] TRACE: [WS_MESSAGE] {"params":{},"type":"ready","messageId":-1000}
+ 
+Jun 4 16:39:22 detox[40488] TRACE: [WSS_GET_FROM, #app] {"type":"waitForActiveDone","params":{},"messageId":1}
+Jun 4 16:39:22 detox[40488] TRACE: [WSS_SEND_TO, #tester] {"type":"waitForActiveDone","params":{},"messageId":1}
+Jun 4 16:39:22 detox[40488] TRACE: [WS_MESSAGE] {"type":"waitForActiveDone","params":{},"messageId":1}
+ 
+Jun 4 16:39:22 detox[40565] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onAppReady({
+  deviceId: '450F4FD7-0F9F-43C3-A96A-B38DD4650685',
+  bundleId: 'org.reactjs.native.example.DetoxOutputTest',
+  pid: 40565
+})
+Jun 4 16:39:22 detox[40488] TRACE: [WS_SEND] {"type":"reactNativeReload","params":{},"messageId":-1000}
+Jun 4 16:39:22 detox[40488] TRACE: [WSS_GET_FROM, #tester] {"type":"reactNativeReload","params":{},"messageId":-1000}
+Jun 4 16:39:22 detox[40488] TRACE: [WSS_SEND_TO, #app] {"type":"reactNativeReload","params":{},"messageId":-1000}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_GET_FROM, #app] {"params":{},"messageId":-1000,"type":"ready"}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_SEND_TO, #tester] {"params":{},"messageId":-1000,"type":"ready"}
+Jun 4 16:39:23 detox[40488] TRACE: [WS_MESSAGE] {"params":{},"messageId":-1000,"type":"ready"}
+ 
+Jun 4 16:39:23 detox[40488] TRACE: [WS_SEND] {"type":"invoke","params":{"type":"expectation","predicate":{"type":"id","value":"home.container.welcome"},"expectation":"toBeVisible"},"messageId":2}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_GET_FROM, #tester] {"type":"invoke","params":{"type":"expectation","predicate":{"type":"id","value":"home.container.welcome"},"expectation":"toBeVisible"},"messageId":2}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_SEND_TO, #app] {"type":"invoke","params":{"type":"expectation","predicate":{"type":"id","value":"home.container.welcome"},"expectation":"toBeVisible"},"messageId":2}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_GET_FROM, #app] {"params":{},"messageId":2,"type":"invokeResult"}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_SEND_TO, #tester] {"params":{},"messageId":2,"type":"invokeResult"}
+Jun 4 16:39:23 detox[40488] TRACE: [WS_MESSAGE] {"params":{},"messageId":2,"type":"invokeResult"}
+ 
+Jun 4 16:39:23 detox[40488] TRACE: [WS_SEND] {"type":"reactNativeReload","params":{},"messageId":-1000}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_GET_FROM, #tester] {"type":"reactNativeReload","params":{},"messageId":-1000}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_SEND_TO, #app] {"type":"reactNativeReload","params":{},"messageId":-1000}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_GET_FROM, #app] {"messageId":-1000,"type":"ready","params":{}}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_SEND_TO, #tester] {"messageId":-1000,"type":"ready","params":{}}
+Jun 4 16:39:23 detox[40488] TRACE: [WS_MESSAGE] {"messageId":-1000,"type":"ready","params":{}}
+ 
+Jun 4 16:39:23 detox[40488] TRACE: [WS_SEND] {"type":"invoke","params":{"type":"action","action":"tap","predicate":{"type":"id","value":"home.container.button"}},"messageId":3}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_GET_FROM, #tester] {"type":"invoke","params":{"type":"action","action":"tap","predicate":{"type":"id","value":"home.container.button"}},"messageId":3}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_SEND_TO, #app] {"type":"invoke","params":{"type":"action","action":"tap","predicate":{"type":"id","value":"home.container.button"}},"messageId":3}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_GET_FROM, #app] {"type":"invokeResult","params":{},"messageId":3}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_SEND_TO, #tester] {"type":"invokeResult","params":{},"messageId":3}
+Jun 4 16:39:23 detox[40488] TRACE: [WS_MESSAGE] {"type":"invokeResult","params":{},"messageId":3}
+ 
+Jun 4 16:39:23 detox[40488] TRACE: [WS_SEND] {"type":"invoke","params":{"type":"expectation","predicate":{"type":"text","value":"Thank you for clicking"},"expectation":"toBeVisible"},"messageId":4}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_GET_FROM, #tester] {"type":"invoke","params":{"type":"expectation","predicate":{"type":"text","value":"Thank you for clicking"},"expectation":"toBeVisible"},"messageId":4}
+Jun 4 16:39:23 detox[40488] TRACE: [WSS_SEND_TO, #app] {"type":"invoke","params":{"type":"expectation","predicate":{"type":"text","value":"Thank you for clicking"},"expectation":"toBeVisible"},"messageId":4}
+Jun 4 16:39:24 detox[40488] TRACE: [WSS_GET_FROM, #app] {"type":"testFailed","params":{"viewHierarchy":"<UIWindowScene: 0x135109910; scene = <FBSScene: 0x60000394d980; identifier: sceneID:org.reactjs.native.example.DetoxOutputTest-default>; persistentIdentifier = 2000DD9B-321B-436B-A518-5EE3F687CFBA; activationState = UISceneActivationStateForegroundActive>\n   + <UIWindow: 0x133e355f0; frame = (0 0; 390 844); layer = <UIWindowLayer: 0x6000019dc360>>\n   |    | <UITransitionView: 0x135056f30; frame = (0 0; 390 844); layer = <CALayer: 0x600001704460>>\n   |    |    | <UIDropShadowView: 0x1351046f0; frame = (0 0; 390 844); layer = <CALayer: 0x60000170d2c0>>\n   |    |    |    | <RCTRootView: 0x135108640; frame = (0 0; 390 844); layer = <CALayer: 0x60000170cc60>>\n   |    |    |    |    | <RCTRootContentView: 0x133f1faf0; frame = (0 0; 390 844); ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x600001128960>>\n   |    |    |    |    |    | <RCTView: 0x13506cdb0; frame = (0 0; 390 844); ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x6000017dba80>>\n   |    |    |    |    |    |    | <RCTView: 0x13506c600; frame = (0 0; 390 844); ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x6000017db900>>\n   |    |    |    |    |    |    |    | <RCTSafeAreaView: 0x13506c330; frame = (0 0; 390 201.667); ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x6000017dba40>>\n   |    |    |    |    |    |    |    |    | <RCTView: 0x13506c090; frame = (0 47; 390 154.667); ax.id = \"home.container.welcome\"; ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x6000017dbd20>>\n   |    |    |    |    |    |    |    |    |    | <RCTView: 0x13506b950; frame = (32 73.3333; 326 49.3333); ax.id = \"home.container.button\"; ax.label = \"Done\"; layer = <CALayer: 0x6000017db8e0>>\n   |    |    |    |    |    |    |    |    |    |    | <RCTTextView: 0x13501adb0; frame = (143 15; 40 19.6667); text = \"Done\"; ax.label = \"Done\"; layer = <CALayer: 0x6000017dbac0>>\n   |    |    |    |    |    |    |    |    |    | <RCTTextView: 0x135026c10; frame = (32 32; 326 26.6667); text = \"Thank you for clicking!\"; ax.label = \"Thank you for clicking!\"; layer = <CALayer: 0x6000017dbe60>>\n","windows":["<UIWindow: 0x133e355f0; frame = (0 0; 390 844);>","<DTXTouchVisualizerWindow: 0x13510de00; frame = (0 0; 390 844);>"],"DetoxFailureInformation":{"lineNumber":50,"file":"\/Users\/builder\/work\/detox\/ios\/Detox\/Invocation\/Element.swift","functionName":"views"},"details":"No elements found for “MATCHER(text == “Thank you for clicking”)”","visibilityFailingScreenshotsURL":"\/Users\/jacobarvidsson\/Library\/Developer\/CoreSimulator\/Devices\/450F4FD7-0F9F-43C3-A96A-B38DD4650685\/data\/Containers\/Data\/Application\/FB169E04-3C64-4003-A94C-ABC19A96CACA\/tmp\/visibilityFailingScreenshots","NSLocalizedDescription":"No elements found for “MATCHER(text == “Thank you for clicking”)”","viewHierarchyURL":"\/Users\/jacobarvidsson\/Library\/Developer\/CoreSimulator\/Devices\/450F4FD7-0F9F-43C3-A96A-B38DD4650685\/data\/Containers\/Data\/Application\/FB169E04-3C64-4003-A94C-ABC19A96CACA\/tmp\/13D5A162-F691-49E3-B295-1FFB310DE9E1.viewhierarchy","visibilityFailingRectsURL":"\/Users\/jacobarvidsson\/Library\/Developer\/CoreSimulator\/Devices\/450F4FD7-0F9F-43C3-A96A-B38DD4650685\/data\/Containers\/Data\/Application\/FB169E04-3C64-4003-A94C-ABC19A96CACA\/tmp\/visibilityFailingRects"},"messageId":4}
+Jun 4 16:39:24 detox[40488] TRACE: [WSS_SEND_TO, #tester] {"type":"testFailed","params":{"viewHierarchy":"<UIWindowScene: 0x135109910; scene = <FBSScene: 0x60000394d980; identifier: sceneID:org.reactjs.native.example.DetoxOutputTest-default>; persistentIdentifier = 2000DD9B-321B-436B-A518-5EE3F687CFBA; activationState = UISceneActivationStateForegroundActive>\n   + <UIWindow: 0x133e355f0; frame = (0 0; 390 844); layer = <UIWindowLayer: 0x6000019dc360>>\n   |    | <UITransitionView: 0x135056f30; frame = (0 0; 390 844); layer = <CALayer: 0x600001704460>>\n   |    |    | <UIDropShadowView: 0x1351046f0; frame = (0 0; 390 844); layer = <CALayer: 0x60000170d2c0>>\n   |    |    |    | <RCTRootView: 0x135108640; frame = (0 0; 390 844); layer = <CALayer: 0x60000170cc60>>\n   |    |    |    |    | <RCTRootContentView: 0x133f1faf0; frame = (0 0; 390 844); ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x600001128960>>\n   |    |    |    |    |    | <RCTView: 0x13506cdb0; frame = (0 0; 390 844); ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x6000017dba80>>\n   |    |    |    |    |    |    | <RCTView: 0x13506c600; frame = (0 0; 390 844); ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x6000017db900>>\n   |    |    |    |    |    |    |    | <RCTSafeAreaView: 0x13506c330; frame = (0 0; 390 201.667); ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x6000017dba40>>\n   |    |    |    |    |    |    |    |    | <RCTView: 0x13506c090; frame = (0 47; 390 154.667); ax.id = \"home.container.welcome\"; ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x6000017dbd20>>\n   |    |    |    |    |    |    |    |    |    | <RCTView: 0x13506b950; frame = (32 73.3333; 326 49.3333); ax.id = \"home.container.button\"; ax.label = \"Done\"; layer = <CALayer: 0x6000017db8e0>>\n   |    |    |    |    |    |    |    |    |    |    | <RCTTextView: 0x13501adb0; frame = (143 15; 40 19.6667); text = \"Done\"; ax.label = \"Done\"; layer = <CALayer: 0x6000017dbac0>>\n   |    |    |    |    |    |    |    |    |    | <RCTTextView: 0x135026c10; frame = (32 32; 326 26.6667); text = \"Thank you for clicking!\"; ax.label = \"Thank you for clicking!\"; layer = <CALayer: 0x6000017dbe60>>\n","windows":["<UIWindow: 0x133e355f0; frame = (0 0; 390 844);>","<DTXTouchVisualizerWindow: 0x13510de00; frame = (0 0; 390 844);>"],"DetoxFailureInformation":{"lineNumber":50,"file":"/Users/builder/work/detox/ios/Detox/Invocation/Element.swift","functionName":"views"},"details":"No elements found for “MATCHER(text == “Thank you for clicking”)”","visibilityFailingScreenshotsURL":"/Users/jacobarvidsson/Library/Developer/CoreSimulator/Devices/450F4FD7-0F9F-43C3-A96A-B38DD4650685/data/Containers/Data/Application/FB169E04-3C64-4003-A94C-ABC19A96CACA/tmp/visibilityFailingScreenshots","NSLocalizedDescription":"No elements found for “MATCHER(text == “Thank you for clicking”)”","viewHierarchyURL":"/Users/jacobarvidsson/Library/Developer/CoreSimulator/Devices/450F4FD7-0F9F-43C3-A96A-B38DD4650685/data/Containers/Data/Application/FB169E04-3C64-4003-A94C-ABC19A96CACA/tmp/13D5A162-F691-49E3-B295-1FFB310DE9E1.viewhierarchy","visibilityFailingRectsURL":"/Users/jacobarvidsson/Library/Developer/CoreSimulator/Devices/450F4FD7-0F9F-43C3-A96A-B38DD4650685/data/Containers/Data/Application/FB169E04-3C64-4003-A94C-ABC19A96CACA/tmp/visibilityFailingRects"},"messageId":4}
+Jun 4 16:39:24 detox[40488] TRACE: [WS_MESSAGE] {"type":"testFailed","params":{"viewHierarchy":"<UIWindowScene: 0x135109910; scene = <FBSScene: 0x60000394d980; identifier: sceneID:org.reactjs.native.example.DetoxOutputTest-default>; persistentIdentifier = 2000DD9B-321B-436B-A518-5EE3F687CFBA; activationState = UISceneActivationStateForegroundActive>\n   + <UIWindow: 0x133e355f0; frame = (0 0; 390 844); layer = <UIWindowLayer: 0x6000019dc360>>\n   |    | <UITransitionView: 0x135056f30; frame = (0 0; 390 844); layer = <CALayer: 0x600001704460>>\n   |    |    | <UIDropShadowView: 0x1351046f0; frame = (0 0; 390 844); layer = <CALayer: 0x60000170d2c0>>\n   |    |    |    | <RCTRootView: 0x135108640; frame = (0 0; 390 844); layer = <CALayer: 0x60000170cc60>>\n   |    |    |    |    | <RCTRootContentView: 0x133f1faf0; frame = (0 0; 390 844); ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x600001128960>>\n   |    |    |    |    |    | <RCTView: 0x13506cdb0; frame = (0 0; 390 844); ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x6000017dba80>>\n   |    |    |    |    |    |    | <RCTView: 0x13506c600; frame = (0 0; 390 844); ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x6000017db900>>\n   |    |    |    |    |    |    |    | <RCTSafeAreaView: 0x13506c330; frame = (0 0; 390 201.667); ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x6000017dba40>>\n   |    |    |    |    |    |    |    |    | <RCTView: 0x13506c090; frame = (0 47; 390 154.667); ax.id = \"home.container.welcome\"; ax.label = \"Thank you for clicking! Done\"; layer = <CALayer: 0x6000017dbd20>>\n   |    |    |    |    |    |    |    |    |    | <RCTView: 0x13506b950; frame = (32 73.3333; 326 49.3333); ax.id = \"home.container.button\"; ax.label = \"Done\"; layer = <CALayer: 0x6000017db8e0>>\n   |    |    |    |    |    |    |    |    |    |    | <RCTTextView: 0x13501adb0; frame = (143 15; 40 19.6667); text = \"Done\"; ax.label = \"Done\"; layer = <CALayer: 0x6000017dbac0>>\n   |    |    |    |    |    |    |    |    |    | <RCTTextView: 0x135026c10; frame = (32 32; 326 26.6667); text = \"Thank you for clicking!\"; ax.label = \"Thank you for clicking!\"; layer = <CALayer: 0x6000017dbe60>>\n","windows":["<UIWindow: 0x133e355f0; frame = (0 0; 390 844);>","<DTXTouchVisualizerWindow: 0x13510de00; frame = (0 0; 390 844);>"],"DetoxFailureInformation":{"lineNumber":50,"file":"/Users/builder/work/detox/ios/Detox/Invocation/Element.swift","functionName":"views"},"details":"No elements found for “MATCHER(text == “Thank you for clicking”)”","visibilityFailingScreenshotsURL":"/Users/jacobarvidsson/Library/Developer/CoreSimulator/Devices/450F4FD7-0F9F-43C3-A96A-B38DD4650685/data/Containers/Data/Application/FB169E04-3C64-4003-A94C-ABC19A96CACA/tmp/visibilityFailingScreenshots","NSLocalizedDescription":"No elements found for “MATCHER(text == “Thank you for clicking”)”","viewHierarchyURL":"/Users/jacobarvidsson/Library/Developer/CoreSimulator/Devices/450F4FD7-0F9F-43C3-A96A-B38DD4650685/data/Containers/Data/Application/FB169E04-3C64-4003-A94C-ABC19A96CACA/tmp/13D5A162-F691-49E3-B295-1FFB310DE9E1.viewhierarchy","visibilityFailingRectsURL":"/Users/jacobarvidsson/Library/Developer/CoreSimulator/Devices/450F4FD7-0F9F-43C3-A96A-B38DD4650685/data/Containers/Data/Application/FB169E04-3C64-4003-A94C-ABC19A96CACA/tmp/visibilityFailingRects"},"messageId":4}
+ 
+Jun 4 16:39:24 detox[40488] TRACE: [ARTIFACT_START] starting FileArtifact
+Jun 4 16:39:24 detox[40488] TRACE: [ARTIFACT_STOP] stopping FileArtifact
+Jun 4 16:39:24 detox[40488] TRACE: [ARTIFACTS_LIFECYCLE] artifactsManager.onBeforeCleanup()
+Jun 4 16:39:24 detox[40488] TRACE: [ARTIFACT_SAVE] saving FileArtifact to: artifacts/ios.2022-06-04 15-39-14Z/ui.viewhierarchy
+Jun 4 16:39:24 detox[40488] DEBUG: [MOVE_FILE] moving "/Users/jacobarvidsson/Library/Developer/CoreSimulator/Devices/450F4FD7-0F9F-43C3-A96A-B38DD4650685/data/Containers/Data/Application/FB169E04-3C64-4003-A94C-ABC19A96CACA/tmp/13D5A162-F691-49E3-B295-1FFB310DE9E1.viewhierarchy" to artifacts/ios.2022-06-04 15-39-14Z/ui.viewhierarchy
+Jun 4 16:39:24 detox[40488] TRACE: [ARTIFACT_SAVE] saving SimulatorLogRecording to: artifacts/ios.2022-06-04 15-39-14Z/450F4FD7-0F9F-43C3-A96A-B38DD4650685 2022-06-04 15-39-24Z.startup.log
+Jun 4 16:39:24 detox[40488] TRACE: [ARTIFACT_STOP] stopping SimulatorLogRecording
+Jun 4 16:39:24 detox[40558] TRACE: [SPAWN_KILL] sending SIGINT to: /usr/bin/xcrun simctl spawn 450F4FD7-0F9F-43C3-A96A-B38DD4650685 log stream --level debug --style compact --predicate processImagePath beginsWith "/Users/jacobarvidsson/Library/Developer/CoreSimulator/Devices/450F4FD7-0F9F-43C3-A96A-B38DD4650685/data/Containers/Bundle/Application/ED4B1BEA-D20F-4828-BFD6-5EE6DA82A932/DetoxOutputTest.app"
+Jun 4 16:39:24 detox[40488] DEBUG: [SPAWN_END, #8, cpid=40558] /usr/bin/xcrun simctl spawn 450F4FD7-0F9F-43C3-A96A-B38DD4650685 log stream --level debug --style compact --predicate "processImagePath beginsWith \"/Users/jacobarvidsson/Library/Developer/CoreSimulator/Devices/450F4FD7-0F9F-43C3-A96A-B38DD4650685/data/Containers/Bundle/Application/ED4B1BEA-D20F-4828-BFD6-5EE6DA82A932/DetoxOutputTest.app\"" exited with code #0
+Jun 4 16:39:24 detox[40488] DEBUG: [MOVE_FILE] moving "/private/var/folders/6r/jcp_6lvj54n3b2fh0v828fkm0000gn/T/145ff53c-fa53-4cbf-8705-4dfe6efd179f.detox.log" to artifacts/ios.2022-06-04 15-39-14Z/450F4FD7-0F9F-43C3-A96A-B38DD4650685 2022-06-04 15-39-24Z.startup.log
+Jun 4 16:39:24 detox[40488] TRACE: [ARTIFACT_START] starting FileArtifact
+Jun 4 16:39:24 detox[40488] TRACE: [ARTIFACT_STOP] stopping FileArtifact
+Jun 4 16:39:24 detox[40488] TRACE: [ARTIFACT_SAVE] saving FileArtifact to: artifacts/ios.2022-06-04 15-39-14Z/detox_pid_40488.json.log { append: true }
+Jun 4 16:39:24 detox[40488] TRACE: [ARTIFACT_START] starting FileArtifact
+Jun 4 16:39:24 detox[40488] TRACE: [ARTIFACT_STOP] stopping FileArtifact
+Jun 4 16:39:24 detox[40488] TRACE: [ARTIFACT_SAVE] saving FileArtifact to: artifacts/ios.2022-06-04 15-39-14Z/detox_pid_40488.log { append: true }
+Jun 4 16:39:24 detox[40488] DEBUG: [MOVE_FILE] moving "/private/var/folders/6r/jcp_6lvj54n3b2fh0v828fkm0000gn/T/81adf07c-a9e1-44fe-97cf-256036df1532.detox.log" to artifacts/ios.2022-06-04 15-39-14Z/detox_pid_40488.json.log
+Jun 4 16:39:24 detox[40488] DEBUG: [MOVE_FILE] moving "/private/var/folders/6r/jcp_6lvj54n3b2fh0v828fkm0000gn/T/bedd9ab7-4c3b-4537-95e9-253b9d4eabac.detox.log" to artifacts/ios.2022-06-04 15-39-14Z/detox_pid_40488.log
+Jun 4 16:39:24 detox[40488] TRACE: [WS_SEND] {"type":"cleanup","params":{"stopRunner":false},"messageId":-49642}
+Jun 4 16:39:24 detox[40488] TRACE: [WSS_GET_FROM, #tester] {"type":"cleanup","params":{"stopRunner":false},"messageId":-49642}
+Jun 4 16:39:24 detox[40488] TRACE: [WSS_SEND_TO, #app] {"type":"cleanup","params":{"stopRunner":false},"messageId":-49642}
+Jun 4 16:39:24 detox[40488] TRACE: [WSS_GET_FROM, #app] {"messageId":-49642,"type":"cleanupDone","params":{}}
+Jun 4 16:39:24 detox[40488] TRACE: [WSS_SEND_TO, #tester] {"messageId":-49642,"type":"cleanupDone","params":{}}
+Jun 4 16:39:24 detox[40488] TRACE: [WS_MESSAGE] {"messageId":-49642,"type":"cleanupDone","params":{}}
+ 
+Jun 4 16:39:24 detox[40488] DEBUG: [WSS_CLOSE] Detox server has been closed gracefully
+Jun 4 16:39:24 detox[40488] TRACE: [SESSION_TORN] app exited session 9c8db324-4c53-1aa7-1b95-b99eb07f0fbf
+Jun 4 16:39:24 detox[40488] TRACE: [WSS_SEND_TO, #tester] {"type":"appDisconnected"}
+Jun 4 16:39:24 detox[40488] TRACE: [SESSION_TORN] tester exited session 9c8db324-4c53-1aa7-1b95-b99eb07f0fbf
